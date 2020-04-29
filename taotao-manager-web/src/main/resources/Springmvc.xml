@@ -24,8 +24,10 @@
     <!-- 引用dubbo服务 -->
     <dubbo:application name="taotao-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="192.168.1.100:2181"/>
+    <!--接受服务-->
     <dubbo:reference interface="com.taotao.service.ItemService" id="itemService" />
     <dubbo:reference interface="com.taotao.service.ItemCatService" id="itemCatService" />
+    <dubbo:reference interface="com.taotao.content.service.ItemContentService" id="itemContentService" />
 
     <!--放行静态资源-->
     <mvc:resources location="/css/" mapping="/css/**"/>
